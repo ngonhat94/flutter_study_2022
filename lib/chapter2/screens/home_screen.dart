@@ -27,7 +27,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return Consumer<TabManager>(builder: (context, tabManager, child){
       return Scaffold(
         appBar: AppBar(title: const Text('Fooderlich')),
-        body: pages[tabManager.selectedTab],
+        body: IndexedStack(children: pages, index: tabManager.selectedTab),
+        // pages[tabManager.selectedTab],
         bottomNavigationBar: BottomNavigationBar(
           selectedItemColor: Theme.of(context).textSelectionTheme.selectionColor,
           currentIndex: tabManager.selectedTab,

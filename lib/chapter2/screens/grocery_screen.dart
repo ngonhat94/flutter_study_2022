@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hoc_flutter/chapter2/models/models.dart';
 import 'package:hoc_flutter/chapter2/screens/empty_grocery_screen.dart';
 import 'package:hoc_flutter/chapter2/screens/grocery_item_screen.dart';
+import 'package:hoc_flutter/chapter2/screens/grocery_list_screen.dart';
 import 'package:provider/provider.dart';
 
 class GroceryScreen extends StatelessWidget {
@@ -34,7 +35,7 @@ class GroceryScreen extends StatelessWidget {
   Widget buildGroceryScreen(){
     return Consumer<GroceryManager>(builder: (context, manager, child){
       if (manager.groceryItems.isNotEmpty) {
-        return Container();
+        return GroceryListScreen(manager: manager);
       } else {
         return const EmptyGroceryScreen();
       }
