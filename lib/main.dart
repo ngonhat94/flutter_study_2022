@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hoc_flutter/chapter2/fooderlich_theme.dart';
 import 'package:hoc_flutter/chapter2/models/models.dart';
 // import 'package:hoc_flutter/chapter2/fooderlich.dart';
 import 'package:hoc_flutter/chapter2/screens/home_screen.dart';
+import 'package:hoc_flutter/complex_list/app.dart';
+import 'package:hoc_flutter/complex_list/repository.dart';
+import 'package:hoc_flutter/complex_list/simple_bloc_observer.dart';
 import 'package:hoc_flutter/recipe.dart';
 import 'package:hoc_flutter/recipe_detail.dart';
 import 'package:provider/provider.dart';
 
 void main() {
   // runApp(const Fooderlich());
-  runApp(MyApp());
+  Bloc.observer = SimpleBlocObserver();
+  runApp(App(repository: Repository()));
 }
 
 class MyApp extends StatelessWidget {

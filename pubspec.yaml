@@ -39,6 +39,9 @@ dependencies:
   intl: ^0.17.0
   uuid: ^3.0.6
   flutter_colorpicker: ^1.0.3
+  flutter_bloc: ^8.1.1
+  bloc:
+  equatable: ^2.0.5
 
 dev_dependencies:
   flutter_test:
